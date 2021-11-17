@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animationPage</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="vanilla.js"></script>
+</head>
+<body>
+	<section class="header">
+		<div class="moon" id="moon"></div>
+		<img src="cloud.png" class="fixedcloud">
+		<img src="fon2.png" data-speed="5" class="forest">
+		<img src="cloud.png" class="cloud">
+		<img src="cloud1.png" class="cloud1">
+		<img src="cloud2.png" class="cloud2">
+		<img src="cloud.png" class="cloud3">
+		<img src="cloud1.png" class="cloud4">
+		<img src="cloud2.png" class="cloud5">
+		<!-- <img src="cloud3.png" class="cloud3"> -->
+	</section>
+	<section class="id">
+		
+	</section>
+
+	<script type="text/javascript">
+		function snow() {
+			let son = 500;
+			let header = document.querySelector('.header');
+			let i = 0;
+			while (i < son) {
+				let qor = document.createElement("i");
+				let x = Math.floor(Math.random() * window.innerWidth);
+				let y = Math.floor(Math.random() * window.innerHeight);
+				let davomiylik = Math.random() * 10;
+				let size = Math.random() * 2;
+				qor.style.left = x + 'px';
+				qor.style.top = y + 'px';
+				qor.style.width = 4 + size + 'px';
+				qor.style.height = 4 + size + 'px';
+				qor.style.animationDuration =5 + davomiylik + 's';
+				qor.style.animationDelay = davomiylik + 's';
+				header.appendChild(qor);
+				i++;
+			}
+		}
+		snow();
+		let oy = document.getElementById("moon");
+		let forest = document.getElementById("forest");
+		window.addEventListener('scroll', function() {
+			var value = window.scrollY;
+			oy.style.top = 50 + value + 'px';лдщщщхх
+		})
+	</script>
+</body>
+</html>
